@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+   <header>Hora do dia</header>
+
+    <div id="container">
+        
+    </div>
+
+    <footer>&COPY;AbnerWillian</footer>
+
+    <script>
+        let container = document.querySelector('div#container')
+        let agora = new Date()
+        let hr = agora.getHours()
+        
+       
+        if (hr >= 7 && hr <= 12){
+
+            container.innerHTML = `<h1>Bom dia, agora são ${hr} horas da manhã</h1>`
+            container.style.background = `rgb(71, 98, 124)`
+            container.style.color = `white`
+            container.innerHTML += `<img src=images/manha.jpeg>`
+            
+        } else if (hr > 12 && hr <= 18){
+
+            container.innerHTML = `<h1>Bom tarde, agora são ${hr} horas da tarde</h1>`
+            container.style.background = `rgb(160, 107, 8)`
+            container.style.color = `white`
+            container.innerHTML += `<img src=images/tarde.jpeg>`
+
+        } else if (hr > 18 && hr <= 23){
+            
+            container.innerHTML = `<h1>Boa noite, agora são ${hr} horas da noite</h1>`
+            container.style.background = 'rgb(9, 1, 24)'
+            container.style.color = `white`
+            container.innerHTML += `<img src=images/noite.jpeg>`
+        }  else {
+
+            container.innerHTML = `<h1>Boa madrugada, agora são ${hr} horas da madrugada</h1>`
+            container.innerHTML += `<img src=images/madru.jpeg>`
+            container.style.color = `rgb(94, 92, 92)`
+            container.style.background = `black`
+
+        }
+    </script>
+</body>
+</html>
